@@ -12,16 +12,16 @@ import 'ui/pages/welcome.page.dart';
 class AppPage extends GetWidget<AppController> {
   @override
   Widget build(BuildContext context) {
-    return GetX<AuthController>(builder: (AuthController authcontroller) {
-      if (authcontroller.state is UnAuthenticated) {
+    return GetX<AuthController>(builder: (AuthController authController) {
+      if (authController.state is UnAuthenticated) {
         return WelcomePage();
       }
 
-      if (authcontroller.state is Authenticated) {
+      if (authController.state is Authenticated) {
         return HomePage();
       }
 
-      if (authcontroller.state is UnVerifiedEmail) {
+      if (authController.state is UnVerifiedEmail) {
         return VerifyEmailPage();
       }
 
